@@ -34,7 +34,8 @@ foreach ($client->parseEvents() as $event) {
                             'messages' => array(
                                 array(
                                     'type' => 'text',
-                                    'text' => $message['text']
+                                    //'text' => $message['text']
+                                    'text' => 'テキスト応答です。'
                                 )
                             )
                         ));

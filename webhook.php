@@ -72,6 +72,17 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    } else if (strcmp($message['text'],"オーディオ")==0) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'audio',
+                                    'originalContentUrl' => 'https://linemsgbottrial2.herokuapp.com/audios/audio1.mp3',
+                                    'duration' => 5000
+                                )
+                            )
+                        ));
                     }
                     break;
                 default:

@@ -44,7 +44,17 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                 ));
+            //} else if (strcmp($data,"postback")==0) {
             } else {
+                $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'text',
+                                    'text' => 'サポートされないポストバックです。'
+                                )
+                            )
+                ));
             }
             break;
         case 'message':

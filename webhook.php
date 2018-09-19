@@ -26,6 +26,8 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'postback':
             error_log("========== postback");
+            $postback=$event['postback'];
+            error_log("========== postback" . $postback);
             break;
         case 'message':
             $message = $event['message'];

@@ -132,6 +132,28 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    } else if (strcmp($message['text'],"カルーセルテンプレート")==0) {
+                        $columns=array(
+                                    array('thumbnailImageUrl'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                          'title' => 'タイトル1',
+                                          'text' => 'テキスト1',
+                                          'actions' => array(array('type'=>'message','label'=>'ラベル','text'=>'メッセージ'))
+                                          )
+                                          );
+                        $template=array('type'=>'image_carousel',
+                                        'columns' => $columns,
+                                        );
+                                     );
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'template',
+                                    'altText' => '代替えテキスト',
+                                    'template' => $template
+                                )
+                            )
+                        ));
                     }
                     break;
                 default:

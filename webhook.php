@@ -73,7 +73,7 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
-                    } else if (strcmp($message['text'],"オーディオ")==0) {
+                    } else if (strcmp($message['text'],"音声")==0) {
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(

@@ -83,6 +83,19 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    } else if (strcmp($message['text'],"ロケーション")==0) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'location',
+                                    'title' => 'スカイツリー',
+                                    'address"=>'アドレス',
+                                    'latitide' => 35.710063,
+                                    'longitude' => 139.8107
+                                )
+                            )
+                        ));
                     }
                     break;
                 default:

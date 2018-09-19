@@ -39,6 +39,18 @@ foreach ($client->parseEvents() as $event) {
                             )
                         ));
 		            } else if (strcmp($message['text'],"スタンプ")==0) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'sticker',
+                                    'packageId' => 1,
+                                    'stickerId'=>1
+                                )
+                            )
+                        ));
+
+/*
                         $reply_token=$event['replyToken'];
                         $header=array('Content-Type: application/json',
                                       'Autorization: Bear ' . $client->channelAccessToken);
@@ -56,6 +68,7 @@ foreach ($client->parseEvents() as $event) {
                         curl_setopt_array($curl,$options);
                         curl_exec($curl);
                         curl_close($curl);
+*/
                     }
                     break;
                 default:

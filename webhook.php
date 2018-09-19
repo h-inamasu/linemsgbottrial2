@@ -96,18 +96,14 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
-                    } else if (strcmp($message['text'],"テンプレートボタン")==0) {
-                        $template=array('type'=>'buttons',
-                                        'thumbnailImageUrl'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
-                                        'title'=>'タイトル',
-                                        'text'=>'テキストメッセージ',
-                                        'actions'=>array(
-                                                    array('type'=>'message',
-                                                          'label'=>'ラベル',
-                                                          'text'=>'テキスト'
-                                                          )
-                                                    )
-                                        );
+                    } else if (strcmp($message['text'],"ボタンテンプレート")==0) {
+                        $template = array('type'    => 'buttons',
+                                          'thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                          'title'   => 'タイトル最大40文字' ,
+                                          'text'    => 'テキストメッセージ。タイトルがないときは最大160文字、タイトルがあるときは最大60文字',
+                                          'actions' => array(
+                                                    array('type'=>'message', 'label'=>'ラベルです', 'text'=>'アクションを実行した時に送信されるメッセージ' ))
+                                                                                                                                                         );
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(

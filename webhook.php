@@ -96,6 +96,28 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    } else if (strcmp($message['text'],"テンプレートボタン")==0) {
+                        $template=array('type'=>'buttons',
+                                        'thumbnailImageUrl'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                        'title'=>'タイトル',
+                                        'text'=>'テキストメッセージ',
+                                        'actions'=>array(
+                                                    array('type'=>'message',
+                                                          'label'=>'ラベル',
+                                                          'text'=>'テキスト'
+                                                          )
+                                                    )
+                                        );
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'template',
+                                    'altText' => '代替えテキスト',
+                                    'template' => $template
+                                )
+                            )
+                        ));
                     }
                     break;
                 default:

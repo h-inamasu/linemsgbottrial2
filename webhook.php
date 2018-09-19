@@ -29,11 +29,11 @@ foreach ($client->parseEvents() as $event) {
             $postback=$event['postback'];
             $data=$postback['data'];
             $params=$postback['params'];
-            //$datetime=$params['datetime'];
+            $datetime=$params['datetime'];
             error_log("========== postback:" . $postback);
             error_log("========== postback.data:" . $data);
             error_log("========== postback.params:" . $params);
-            //error_log("========== postback.params['datatime']:" . $datetime);
+            error_log("========== postback.params['datatime']:" . $datetime);
             break;
         case 'message':
             $message = $event['message'];

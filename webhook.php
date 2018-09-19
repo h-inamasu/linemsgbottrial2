@@ -89,8 +89,8 @@ foreach ($client->parseEvents() as $event) {
                             'messages' => array(
                                 array(
                                     'type' => 'location',
-                                    'title' => 'スカイツリー',
-                                    'address"=>'アドレス',
+                                    'title' => '東京スカイツリー',
+                                    'address '=> '〒131-0045 東京都墨田区押上1-1-2',
                                     'latitide' => 35.710063,
                                     'longitude' => 139.8107
                                 )

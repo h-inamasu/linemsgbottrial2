@@ -133,20 +133,29 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
-                    /*
+                    
                     } else if (strcmp($message['text'],"カルーセルテンプレート")==0) {
-                        $columns=array(
-                                    array('thumbnailImageUrl'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
-                                          'title' => 'タイトル1',
-                                          'text' => 'テキスト1',
-                                          'actions' => array(array('type'=>'message','label'=>'ラベル','text'=>'メッセージ'))
-                                          )
-                                          );
-                        $template=array('type'=>'image_carousel',
+                        $columns = array(
+                            array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                  'title'   => 'タイトル1',
+                                  'text'    => 'テキスト1',
+                                  'actions' => array(
+                                                array('type' => 'message',
+                                                      'label' => 'アクション1',
+                                                      'text' => 'アクション1(message)'))),
+                            array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                  'title'   => 'タイトル2',
+                                  'text'    => 'テキスト2',
+                                  'actions' => array(
+                                                array('type' => 'message',
+                                                      'label' => 'アクション2',
+                                                      'text' => 'アクション2(message)')))
+                           );
+
+                                                                                                                                                                                                                                                $template = array('type'    => 'carousel',
                                         'columns' => $columns,
                                         );
-                                     );
-                        $client->replyMessage(array(
+                      $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
                                 array(
@@ -156,7 +165,6 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
-                    */
                     }
                     break;
                 default:

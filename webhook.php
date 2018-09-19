@@ -90,7 +90,7 @@ foreach ($client->parseEvents() as $event) {
                                 array(
                                     'type' => 'location',
                                     'title' => '皇居',
-                                    'address '=> '〒100-8111 東京都千代田区千代田1-1',
+                                    'address' => '〒100-8111 東京都千代田区千代田1-1',
                                     'latitide' => 35.683798,
                                     'longitude' => 139754182
                                 )

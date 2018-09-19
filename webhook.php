@@ -142,7 +142,23 @@ foreach ($client->parseEvents() as $event) {
                                   'actions' => array(
                                                 array('type' => 'message',
                                                       'label' => 'アクション1',
-                                                      'text' => 'アクション1(message)'))),
+                                                      'text' => 'メッセージアクション'))),
+                            array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                  'title'   => 'タイトル2',
+                                  'text'    => 'テキスト2',
+                                  'actions' => array(
+                                                array('type' => 'uri',
+                                                      'label' => 'uriアクション',
+                                                      'uri' => 'https://google.co.jp'))),
+                            /*
+                            array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                  'title'   => 'タイトル3',
+                                  'text'    => 'テキスト3',
+                                  'actions' => array(
+                                                array('type' => 'datetimepicker',
+                                                      'label' => '日時選択アクション',
+                                                      'mode' => 'datetime',
+                                                      'data' => 'アクション1(message)'))),
                             array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
                                   'title'   => 'タイトル2',
                                   'text'    => 'テキスト2',
@@ -150,9 +166,10 @@ foreach ($client->parseEvents() as $event) {
                                                 array('type' => 'message',
                                                       'label' => 'アクション2',
                                                       'text' => 'アクション2(message)')))
+                           */
                            );
 
-                                                                                                                                                                                                                                                $template = array('type'    => 'carousel',
+                      $template = array('type'    => 'carousel',
                                         'columns' => $columns,
                                         );
                       $client->replyMessage(array(

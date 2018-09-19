@@ -153,7 +153,6 @@ foreach ($client->parseEvents() as $event) {
                                                 array('type' => 'uri',
                                                       'label' => 'uriアクション',
                                                       'uri' => 'https://google.co.jp'))),
-                            /*
                             array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
                                   'title'   => 'タイトル3',
                                   'text'    => 'テキスト3',
@@ -161,7 +160,8 @@ foreach ($client->parseEvents() as $event) {
                                                 array('type' => 'datetimepicker',
                                                       'label' => '日時選択アクション',
                                                       'mode' => 'datetime',
-                                                      'data' => 'アクション1(message)'))),
+                                                      'data' => 'datetimepicker'))),
+                            /*
                             array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
                                   'title'   => 'タイトル2',
                                   'text'    => 'テキスト2',

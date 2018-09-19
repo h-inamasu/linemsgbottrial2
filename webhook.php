@@ -102,8 +102,26 @@ foreach ($client->parseEvents() as $event) {
                                           'title'   => 'タイトル最大40文字' ,
                                           'text'    => 'テキストメッセージ。タイトルがないときは最大160文字、タイトルがあるときは最大60文字',
                                           'actions' => array(
-                                                    array('type'=>'message', 'label'=>'ラベルです', 'text'=>'アクションを実行した時に送信されるメッセージ' ))
+                                                    array('type'=>'message', 'label'=>'ラベル', 'text'=>'アクションを実行した時に送信されるメッセージ' ))
                                                                                                                                                          );
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'template',
+                                    'altText' => '代替えテキスト',
+                                    'template' => $template
+                                )
+                            )
+                        ));
+                    } else if (strcmp($message['text'],"確認テンプレート")==0) {
+                        $template = array('type'    => 'confirm',
+                                          'text'    => 'テキストメッセージ。最大240文字',
+                                          'actions' => array(
+                                                        array('type'=>'message', 'label'=>'yes', 'text'=>'yesを押しました' ),
+                                                        array('type'=>'message', 'label'=>'no',  'text'=>'noを押しました' )
+                                                                                                                                                        )
+                                                                                                                                                      );
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(

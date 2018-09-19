@@ -61,6 +61,17 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    } else if (strcmp($message['text'],"ビデオ")==0) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'video',
+                                    'originalContentUrl' => 'https://linemsgbottrial2.herokuapp.com/videos/video1.mp4',
+                                    'previewImageUrl' => 'https://linemsgbottrial2.herokuapp.com/videos/preview1.jpg'
+                                )
+                            )
+                        ));
                     }
                     break;
                 default:

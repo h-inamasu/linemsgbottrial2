@@ -117,7 +117,7 @@ foreach ($client->parseEvents() as $event) {
                         ));
                     } else if (strcmp($message['text'],"確認テンプレート")==0) {
                         $template = array('type'    => 'confirm',
-                                          'text'    => 'テキストメッセージ。最大240文字',
+                                          'text'    => 'テキスト',
                                           'actions' => array(
                                                         array('type'=>'message', 'label'=>'yes', 'text'=>'yesを押しました' ),
                                                         array('type'=>'message', 'label'=>'no',  'text'=>'noを押しました' )

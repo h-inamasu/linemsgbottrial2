@@ -132,6 +132,7 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    /*
                     } else if (strcmp($message['text'],"カルーセルテンプレート")==0) {
                         $columns=array(
                                     array('thumbnailImageUrl'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
@@ -154,6 +155,7 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    */
                     }
                     break;
                 default:

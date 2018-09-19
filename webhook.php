@@ -119,8 +119,8 @@ foreach ($client->parseEvents() as $event) {
                         $template = array('type'    => 'confirm',
                                           'text'    => 'テキスト',
                                           'actions' => array(
-                                                        array('type'=>'message', 'label'=>'yes', 'text'=>'yesを押しました' ),
-                                                        array('type'=>'message', 'label'=>'no',  'text'=>'noを押しました' )
+                                                        array('type'=>'message', 'label'=>'はい', 'text'=>'はいを押しました' ),
+                                                        array('type'=>'message', 'label'=>'いいえ',  'text'=>'いいえを押しました' )
                                                                                                                                                         )
                                                                                                                                                       );
                         $client->replyMessage(array(

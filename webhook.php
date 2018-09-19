@@ -28,11 +28,11 @@ foreach ($client->parseEvents() as $event) {
             error_log("========== postback");
             $postback=$event['postback'];
             error_log("========== postback:" . $postback);
+            $data=$postback['data'];
+            error_log("========== postback.data:" . $data);
             if (strcmp($data,"datetimepicker")==0) {
-                $data=$postback['data'];
                 $params=$postback['params'];
                 $datetime=$params['datetime'];
-                error_log("========== postback.data:" . $data);
                 error_log("========== postback.params:" . $params);
                 error_log("========== postback.params['datatime']:" . $datetime);
                 $client->replyMessage(array(

@@ -214,6 +214,8 @@ foreach ($client->parseEvents() as $event) {
                                 )
                             )
                         ));
+                    } else if (strcmp($message['text'],"flex")==0) {
+                        error_log("========== flex");
                     }
                     break;
                 default:

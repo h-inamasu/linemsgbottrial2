@@ -28,17 +28,35 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-				if (strcmp($message['text'],"テキスト")==0) {
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'text',
-                                'text' => $message['text']
+		            if (strcmp($message['text'],"テキスト")==0) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'text',
+                                    'text' => $message['text']
+                                )
                             )
-                        )
-                    ));
-				}
+                        ));
+		            } else if (strcmp($message['text'],"スタンプ")==0) {
+                        $reply_token=$event['replyToken'];
+                        $header=array('Content-Type: application/json',
+                                      'Autorization: Bear ' . $client->channelAccessToken);
+                        $message=array('type'=>'sticker',
+                                       'packageId'=>1,
+                                       'stickerId'=>1);
+                        $body=json_encode(array('replyToken'=>$reply_token,
+                                                'messages'=>array($message)));
+                        $options=array(CURL_URL=>'https://api.line.me/v2/bot/message/reply',
+                                       CURLOPT_CUSTOMREQUEST=>'POST',
+                                       CURLOPT_RETURNTRANSFER=>true,
+                                       CURLOPT_HTTPHEADER=>$header,
+                                       CURLOPT_POSTFIELDS=>$body);
+                        $curl=curl_init();
+                        curl_setopt_array($curl,$options);
+                        curl_exec($curl);
+                        curl_close($curl);
+                    }
                     break;
                 default:
                     error_log("Unsupporeted message type: " . $message['type']);

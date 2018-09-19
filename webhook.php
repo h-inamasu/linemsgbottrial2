@@ -24,6 +24,9 @@ $channelSecret = "2332badaa8b3f765fbb60ebbe12041d0";
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
+        case 'postback':
+            error_log("========== postback");
+            break;
         case 'message':
             $message = $event['message'];
             switch ($message['type']) {

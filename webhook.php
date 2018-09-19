@@ -47,7 +47,7 @@ foreach ($client->parseEvents() as $event) {
                                        'stickerId'=>1);
                         $body=json_encode(array('replyToken'=>$reply_token,
                                                 'messages'=>array($message)));
-                        $options=array(CURL_URL=>'https://api.line.me/v2/bot/message/reply',
+                        $options=array(CURLOPT_URL=>'https://api.line.me/v2/bot/message/reply',
                                        CURLOPT_CUSTOMREQUEST=>'POST',
                                        CURLOPT_RETURNTRANSFER=>true,
                                        CURLOPT_HTTPHEADER=>$header,

@@ -141,7 +141,7 @@ foreach ($client->parseEvents() as $event) {
                                   'text'    => 'テキスト1',
                                   'actions' => array(
                                                 array('type' => 'message',
-                                                      'label' => 'アクション1',
+                                                      'label' => 'メッセージアクション',
                                                       'text' => 'メッセージアクション'))),
                             array('thumbnailImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
                                   'title'   => 'タイトル2',

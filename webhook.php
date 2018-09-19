@@ -50,25 +50,17 @@ foreach ($client->parseEvents() as $event) {
                             )
                         ));
 
-/*
-                        $reply_token=$event['replyToken'];
-                        $header=array('Content-Type: application/json',
-                                      'Autorization: Bear ' . $client->channelAccessToken);
-                        $message=array('type'=>'sticker',
-                                       'packageId'=>1,
-                                       'stickerId'=>1);
-                        $body=json_encode(array('replyToken'=>$reply_token,
-                                                'messages'=>array($message)));
-                        $options=array(CURLOPT_URL=>'https://api.line.me/v2/bot/message/reply',
-                                       CURLOPT_CUSTOMREQUEST=>'POST',
-                                       CURLOPT_RETURNTRANSFER=>true,
-                                       CURLOPT_HTTPHEADER=>$header,
-                                       CURLOPT_POSTFIELDS=>$body);
-                        $curl=curl_init();
-                        curl_setopt_array($curl,$options);
-                        curl_exec($curl);
-                        curl_close($curl);
-*/
+                    } else if (strcmp($message['text'],"イメージ")==0) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'image',
+                                    'originalContentUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                    'previewImageUrl' => 'https://linemsgbottrial2.herokuapp.com/images/image2.jpg'
+                                )
+                            )
+                        ));
                     }
                     break;
                 default:

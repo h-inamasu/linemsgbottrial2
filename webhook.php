@@ -80,11 +80,11 @@ foreach ($client->parseEvents() as $event) {
                                 array(
                                     'type' => 'audio',
                                     'originalContentUrl' => 'https://linemsgbottrial2.herokuapp.com/audios/audio1.mp3',
-                                    'duration' => 5000
+                                    'duration' => 10000
                                 )
                             )
                         ));
-                    } else if (strcmp($message['text'],"ロケーション")==0) {
+                    } else if (strcmp($message['text'],"位置情報")==0) {
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(

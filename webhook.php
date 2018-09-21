@@ -215,10 +215,50 @@ foreach ($client->parseEvents() as $event) {
                             )
                         ));
                     } else if (strcmp($message['text'],"flex")==0) {
+                        $styles=array(
+                                    'header'=>array('backgroundColor'=>'#ff62ae'),
+                                    'body'=>array('backgroundColor'=>'#5bff54'),
+                                    'footer'=>array('backgroundColor'=>'#7b78ff'));
+                        $header=array(
+                                    'type'=>'box',
+                                    'layout'=>'vertical',
+                                    'contents'=>array('type'=>'text','text'=>'ヘッダー'));
+                        $hero=array(
+                                    'type'=>'image',
+                                    'url'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
+                                    'size'=>'full',
+                                    'aspectRatio'=>'1:1');
+                        $body=array(
+                                    'type'=>'box',
+                                    'layout'=>'vertical',
+                                    'contents'=>array('type'=>'text',
+                                                      'text'=>'ボディー'));
+                        $footer=array(
+                                    'type'=>'box',
+                                    'layout'=>'vertical',
+                                    'contents'=>array('type'=>'text','text'=>'フッター'));
+                        $contents=array(
+                                    'type'=>'bubble',
+                                    'styles'=>$styles,
+                                    'header'=>$header,
+                                    //'hero'=>$hero,
+                                    //'body'=>$body,
+                                    'footer'=>$footer);
+                                                    
                         $messages=array(
                                     array('type'=>'flex',
                                           'altText'=>'hogehoge',
                                           'contents'=>$contents));
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'flex',
+                                    'altText' => '代替えテキスト',
+                                    'contents' => $contents
+                                )
+                            )
+                        ));
                     }
                     break;
                 default:

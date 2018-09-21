@@ -216,35 +216,41 @@ foreach ($client->parseEvents() as $event) {
                         ));
                     } else if (strcmp($message['text'],"flex")==0) {
                         $styles=array(
+                                    array(
                                     'header'=>array('backgroundColor'=>'#ff62ae'),
                                     'body'=>array('backgroundColor'=>'#5bff54'),
-                                    'footer'=>array('backgroundColor'=>'#7b78ff'));
+                                    'footer'=>array('backgroundColor'=>'#7b78ff')));
                         $header=array(
+                                    array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array('type'=>'text','text'=>'ヘッダー'));
+                                    'contents'=>array('type'=>'text','text'=>'ヘッダー')));
                         $hero=array(
+                                    array(
                                     'type'=>'image',
                                     'url'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
                                     'size'=>'full',
-                                    'aspectRatio'=>'1:1');
+                                    'aspectRatio'=>'1:1'));
                         $body=array(
+                                   array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
                                     'contents'=>array('type'=>'text',
-                                                      'text'=>'ボディー'));
+                                                      'text'=>'ボディー')));
                         $footer=array(
+                                    array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array('type'=>'text','text'=>'フッター'));
+                                    'contents'=>array('type'=>'text','text'=>'フッター')));
                         $contents=array(
+                                    array(
                                     'type'=>'bubble',
                                     'styles'=>$styles,
                                     'header'=>$header,
                                     'hero'=>$hero,
                                     'body'=>$body,
                                     'footer'=>$footer
-                                  );
+                                  ));
                                                     
                         $messages=array(
                                     array('type'=>'flex',

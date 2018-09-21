@@ -219,12 +219,12 @@ foreach ($client->parseEvents() as $event) {
                                     array(
                                     'header'=>array('backgroundColor'=>'#ff62ae'),
                                     'body'=>array('backgroundColor'=>'#5bff54'),
-                                    'footer'=>array('backgroundColor'=>'#7b78ff')));
+                                    'footer'=>array('backgroundColor'=>'#7b78ff'));
                         $header=array(
                                     array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array(array'type'=>'text','text'=>'ヘッダー'))));
+                                    'contents'=>array(array'type'=>'text','text'=>'ヘッダー')));
                         $hero=array(
                                     array(
                                     'type'=>'image',

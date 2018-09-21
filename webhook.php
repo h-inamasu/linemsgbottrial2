@@ -256,7 +256,7 @@ foreach ($client->parseEvents() as $event) {
                                 array(
                                     'type' => 'flex',
                                     'altText' => '代替えテキスト',
-                                    'contents' => $contents
+                                    //'contents' => $contents
                                 )
                             )
                         ));

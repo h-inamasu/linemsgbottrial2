@@ -241,8 +241,8 @@ foreach ($client->parseEvents() as $event) {
                                     'type'=>'bubble',
                                     'styles'=>$styles,
                                     'header'=>$header,
-                                    //'hero'=>$hero,
-                                    //'body'=>$body,
+                                    'hero'=>$hero,
+                                    'body'=>$body,
                                     'footer'=>$footer
                                   );
                                                     

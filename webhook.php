@@ -253,11 +253,11 @@ foreach ($client->parseEvents() as $event) {
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
-                                array(
+                                //array(
                                     'type' => 'flex',
                                     'altText' => '代替えテキスト',
                                     'contents' => $contents
-                                )
+                                //)
                             )
                         ));
                     }

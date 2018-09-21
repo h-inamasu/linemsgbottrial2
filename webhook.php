@@ -250,14 +250,20 @@ foreach ($client->parseEvents() as $event) {
                                     array('type'=>'flex',
                                           'altText'=>'hogehoge',
                                           'contents'=>$contents));
+error_log(json_encode($styles));
+error_log(json_encode($header));
+error_log(json_encode($hero));
+error_log(json_encode($body));
+error_log(json_encode($footer));
+error_log(json_encode($contents));
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
-                                //array(
+                                array(
                                     'type' => 'flex',
                                     'altText' => '代替えテキスト',
                                     'contents' => $contents
-                                //)
+                                )
                             )
                         ));
                     }

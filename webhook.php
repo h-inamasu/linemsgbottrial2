@@ -239,10 +239,10 @@ foreach ($client->parseEvents() as $event) {
                                     'contents'=>array(array('type'=>'text','text'=>'フッター')));
                         $contents=array(
                                     'type'=>'bubble',
-                                    'styles'=>$styles,
+                                    //'styles'=>$styles,
                                     'header'=>$header,
-                                    'hero'=>$hero,
-                                    'body'=>$body,
+                                    //'hero'=>$hero,
+                                    //'body'=>$body,
                                     'footer'=>$footer
                                   );
                                                     

@@ -221,10 +221,9 @@ foreach ($client->parseEvents() as $event) {
                                     'body'=>array('backgroundColor'=>'#5bff54'),
                                     'footer'=>array('backgroundColor'=>'#7b78ff')));
                         $header=array(
-                                    array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array(array'type'=>'text','text'=>'ヘッダー')));
+                                    'contents'=>array(array'type'=>'text','text'=>'ヘッダー'));
                         $hero=array(
                                     array(
                                     'type'=>'image',

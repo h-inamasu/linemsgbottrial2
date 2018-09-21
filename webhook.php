@@ -239,11 +239,11 @@ foreach ($client->parseEvents() as $event) {
                                     'contents'=>array('type'=>'text','text'=>'フッター'));
                         $contents=array(
                                     'type'=>'bubble',
-                                    //'styles'=>$styles,
+                                    'styles'=>$styles,
                                     'header'=>$header,
-                                    //'hero'=>$hero,
-                                    //'body'=>$body,
-                                    //'footer'=>$footer
+                                    'hero'=>$hero,
+                                    'body'=>$body,
+                                    'footer'=>$footer
                                   );
                                                     
                         $messages=array(

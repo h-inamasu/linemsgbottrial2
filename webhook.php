@@ -224,7 +224,7 @@ foreach ($client->parseEvents() as $event) {
                                     array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array('type'=>'text','text'=>'ヘッダー')));
+                                    'contents'=>array(array'type'=>'text','text'=>'ヘッダー'))));
                         $hero=array(
                                     array(
                                     'type'=>'image',
@@ -235,13 +235,13 @@ foreach ($client->parseEvents() as $event) {
                                    array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array('type'=>'text',
-                                                      'text'=>'ボディー')));
+                                    'contents'=>array(array('type'=>'text',
+                                                      'text'=>'ボディー'))));
                         $footer=array(
                                     array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array('type'=>'text','text'=>'フッター')));
+                                    'contents'=>array(array('type'=>'text','text'=>'フッター'))));
                         $contents=array(
                                     array(
                                     'type'=>'bubble',

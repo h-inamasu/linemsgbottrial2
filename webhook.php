@@ -222,7 +222,7 @@ foreach ($client->parseEvents() as $event) {
                         $header=array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array('type'=>'text','text'=>'ヘッダー'));
+                                    'contents'=>array(array('type'=>'text','text'=>'ヘッダー')));
                         $hero=array(
                                     'type'=>'image',
                                     'url'=>'https://linemsgbottrial2.herokuapp.com/images/image1.jpg',
@@ -239,7 +239,7 @@ foreach ($client->parseEvents() as $event) {
                                     'contents'=>array(array('type'=>'text','text'=>'フッター')));
                         $contents=array(
                                     'type'=>'bubble',
-                                    //'styles'=>$styles,
+                                    'styles'=>$styles,
                                     'header'=>$header,
                                     //'hero'=>$hero,
                                     //'body'=>$body,

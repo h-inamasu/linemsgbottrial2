@@ -223,7 +223,7 @@ foreach ($client->parseEvents() as $event) {
                         $header=array(
                                     'type'=>'box',
                                     'layout'=>'vertical',
-                                    'contents'=>array(array'type'=>'text','text'=>'ヘッダー'));
+                                    'contents'=>array('type'=>'text','text'=>'ヘッダー'));
                         $hero=array(
                                     array(
                                     'type'=>'image',

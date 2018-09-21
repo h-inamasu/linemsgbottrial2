@@ -97,6 +97,7 @@ class LINEBotTiny
             'Authorization: Bearer ' . $this->channelAccessToken,
         );
 
+error_log(json_encode($message));
         $context = stream_context_create(array(
             "http" => array(
                 "method" => "POST",
